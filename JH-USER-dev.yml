@@ -6,7 +6,7 @@ spring:
     password: 123456
   rabbitmq:
     host: 47.94.237.238
-    port: 15672
+    port: 5672
     username: admin
     password: admin
 test:
