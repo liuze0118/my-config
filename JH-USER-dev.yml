@@ -37,5 +37,5 @@ spring:
           stateless: true
         default-requeue-rejected: false
 test:
-  name: lisi
+  name: wangwu
 
