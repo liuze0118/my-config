@@ -5,10 +5,37 @@ spring:
     username: root
     password: 123456
   rabbitmq:
-    host: 47.94.237.238
+    addresses: 172.19.0.213
     port: 5672
-    username: admin
-    password: admin
+    username: springCloud1
+    password: springCloud1
+    virtual-host: test
+    template:
+      retry:
+        max-attempts: 5
+        enabled: true
+        max-interval: 300s
+        initial-interval: 1s
+        multiplier: 5
+    listener:
+      direct:
+        retry:
+          enabled: true
+          max-interval: 300s
+          max-attempts: 5
+          initial-interval: 1s
+          multiplier: 5
+          stateless: true
+        default-requeue-rejected: false
+      simple:
+        retry:
+          enabled: true
+          initial-interval: 1s
+          max-attempts: 5
+          max-interval: 300s
+          multiplier: 5
+          stateless: true
+        default-requeue-rejected: false
 test:
   name: lisi
 
